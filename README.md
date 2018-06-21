@@ -10,11 +10,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 The libraries necessary for the use of the program are:
 
-```
 * Un elemento dell'elenco
 * Un altro elemento
 * Il terzo elemento
-```
+
 
 ### Installing
 
