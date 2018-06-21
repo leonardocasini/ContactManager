@@ -1,6 +1,6 @@
-# Project Title
+# Contact Manager
 
-One Paragraph of project description goes here
+A simple project for the exam of Human Computer Interaction
 
 ## Getting Started
 
