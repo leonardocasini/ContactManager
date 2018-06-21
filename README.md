@@ -8,10 +8,12 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+The libraries necessary for the use of the program are
 
 ```
-Give examples
+1. Elemento 1
+2. Elemento 2
+3. Elemento 3
 ```
 
 ### Installing
