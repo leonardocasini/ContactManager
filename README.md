@@ -9,14 +9,11 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 The libraries necessary for the use of the program are:
-1. Elemento 1
-2. Elemento 2
-3. Elemento 3
 
 ```
-1. Elemento 1
-2. Elemento 2
-3. Elemento 3
+* Un elemento dell'elenco
+* Un altro elemento
+* Il terzo elemento
 ```
 
 ### Installing
