@@ -1,6 +1,14 @@
 # Contact Manager
 
-A simple project for the exam of Human Computer Interaction
+A simple project for the exam of Human Computer Interaction.The Contact Manager implements below properties:
+- [x] Visualization of all contacts
+- [x] Allow to order contacts by each fiel displayed
+- [x] Single contact visualization
+- [x] Insertion of a new one
+- [x] Contact persistence
+- [x] Contact tagging and tag search
+- [x] Contact editing
+- [x] Full text search
 
 ## Getting Started
 
