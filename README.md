@@ -34,8 +34,11 @@ The persistance of contacts was obtained through the module pickle. Contact is a
 
 This module create a database save.p where the user can store an array of contact. 
 
-### Step2: Design and link View
-The principal purpose was to define alle the elements needed to represent the contacts (i.e. a TableView and some Buttons). Once defined, these elements are linked to the class ```ViewController``` to add behavior.
+### Step2: Design Graphic User Interface
+Once the logic behind the representation and persistance of contacts has been decided, it was decided to use the module PyQt5 to create the GUI. Through this module they were made:
+ * ContactList using ```QTreeView```
+ * A ```QPushButton``` connected with the event of ```newContact```
+
 Some refiniments, like windows transparency was reached following [these guidelines](https://developer.apple.com/documentation/appkit/nsvisualeffectview)
 
 
