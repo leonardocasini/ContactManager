@@ -11,7 +11,7 @@ A simple project for the exam of Human Computer Interaction.The Contact Manager 
 - [x] Full text search.
 
 
-```MainWindow``` consists of a list of contacts and a line where user can search contact. With a button user open ```NewContForm``` where create a new contact. User can modify and delete contact with the event of doubleclick element of list. Event shows ```ContactViewForm``` where he edit the field of contact.       
+```MainWindow``` consists of a list of contacts and a line where user can search contact. With a button user open ```NewContForm``` where create a new contact. User can modify and delete contact with the event of doubleclick element of list. Event shows ```ContactViewForm``` where he edit the field of contact. Below there is a rappresentation of the behaviour previously descrined.      
 
 ![CM](https://github.com/leonardocasini/ContactManager/blob/master/Mockup/mockup.png)
 
@@ -34,6 +34,8 @@ The persistance of contacts was obtained through the module pickle. Contact is a
 
 This module create a database save.p where the user can store an array of contact. 
 
-
+### Step2: Design and link View
+The principal purpose was to define alle the elements needed to represent the contacts (i.e. a TableView and some Buttons). Once defined, these elements are linked to the class ```ViewController``` to add behavior.
+Some refiniments, like windows transparency was reached following [these guidelines](https://developer.apple.com/documentation/appkit/nsvisualeffectview)
 
 
