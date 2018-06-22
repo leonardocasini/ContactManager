@@ -11,7 +11,7 @@ A simple project for the exam of Human Computer Interaction.The Contact Manager 
 - [x] Full text search.
 
 
-```MainWindow``` consists of a list of contacts and a line where user can search contact. With a button user open ```NewContForm``` where create a new contact.       
+```MainWindow``` consists of a list of contacts and a line where user can search contact. With a button user open ```NewContForm``` where create a new contact. The user can modify and delete contact with the event of doubleclick on element of list. The event open ```ContactViewForm``` and so it can make it.       
 
 ![CM](https://github.com/leonardocasini/ContactManager/blob/master/Mockup/mockup.png)
 
