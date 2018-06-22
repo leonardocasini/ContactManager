@@ -24,24 +24,9 @@ The libraries necessary for the use of the program are:
 
 
 
-## Running the tests
+### Step1: Improve Persistence
+The first step was create ```Contact``` and ```ContactsBook``` classes and improve persistence for ```Contact``` class, this using the UsersDefault strategy, clearly explained in [this tutorial](https://developer.apple.com/documentation/foundation/userdefaults). Shortly, a file is created in the users folder (for me /Users/ME/Library/Containers/my-name.ContactManager/Data/Documents/contacts). This strategy obviusly isn't able to easly manage asynchronus changes: that's why i've not implemented this features.
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
 ```
 
 
