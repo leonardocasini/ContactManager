@@ -1,7 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QIcon, QPixmap
 
-class Ui_Form(object):
+class ContactViewForm(object):
     def setupUi(self, Form, name,surname,number,email,note):
         Form.setObjectName("Contact View")
         Form.resize(436, 333)
@@ -126,7 +126,7 @@ class Ui_Form(object):
     
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "ContactView"))
         self.noteTextLabel.setText(_translate("Form", "Add Notes"))
         self.nameFieldLabel.setText(_translate("Form", "Name"))
         self.surnameFieldLabel.setText(_translate("Form", "Surname"))

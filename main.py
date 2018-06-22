@@ -4,7 +4,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from PyQt5.uic.properties import QtGui
 from NewContact import NewContForm
-from ContactView import Ui_Form
+from ContactView import ContactViewForm
 
 import sys
 import qdarkstyle
@@ -19,7 +19,7 @@ class NewContactForm(QtWidgets.QDialog, NewContForm):
         self.setupUi(self)
 
 #The Widget for the View of the contact
-class ContactViewForm(QtWidgets.QDialog, Ui_Form):
+class ContactViewForm(QtWidgets.QDialog, ContactViewForm):
     def __init__(self,parent=None, name=None,surname=None,number=None,email=None,note=None):
         QtWidgets.QDialog.__init__(self,parent)
         self.setupUi(self, name,surname,number,email,note)        
@@ -31,7 +31,7 @@ class Ui_MainWindow(object):
         MainWindow.resize(369, 629)
 
         #Database is implemented with the pickle module 
-        self.database = pickle.load(open( "save.p", "rb" ))
+        self.database = pickle.load( open( "save.p", "rb" ) )
         
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -159,7 +159,7 @@ class Ui_MainWindow(object):
             
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Contact Manager"))
         __sortingEnabled = self.tableWidget.isSortingEnabled()
         self.tableWidget.setSortingEnabled(False)
         self.tableWidget.setSortingEnabled(__sortingEnabled)
