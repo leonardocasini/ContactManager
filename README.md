@@ -37,8 +37,9 @@ This module create a database save.p where the user can store an array of contac
 ### Step2: Design Graphic User Interface
 Once the logic behind the representation and persistance of contacts has been decided, it was decided to use the module PyQt5 to create the GUI. Through this module they were made:
  * ContactList using ```QTreeView```
- * A ```QPushButton``` connected with the event of ```newContact```
+ * A ```QPushButton``` connected the event of click button with the method ```newContact```
+ * A ```QLineEdit``` connected the event of text changed with method ```filterRegExpChanged```, that filtering contacts
+ * An event on doubleClick elements of ```QTreeView``` that shows the ContactView
 
-Some refiniments, like windows transparency was reached following [these guidelines](https://developer.apple.com/documentation/appkit/nsvisualeffectview)
 
 
