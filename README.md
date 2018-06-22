@@ -27,8 +27,9 @@ The persistance of contacts was obtained through the module pickle. Contact is a
  * name
  * surname
  * email
- * notes: field text where make some annotatiom
-This module create a databasse save.p where the user can store the contact. ContactList is made by an array of element 
+ * notes: field text where make some annotation.
+
+This module create a database save.p where the user can store an array of contact. 
 
 ```
 
