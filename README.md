@@ -10,7 +10,7 @@ A simple project for the exam of Human Computer Interaction.The Contact Manager 
 - [x] Contact editing
 - [x] Full text search
 
-!(https://github.com/leonardocasini/ContactManager/blob/master/Mockup/mockup.png)
+![CM](https://github.com/leonardocasini/ContactManager/blob/master/Mockup/mockup.png)
 
 ### Prerequisites
 
