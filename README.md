@@ -23,7 +23,12 @@ The libraries necessary for the use of the program are:
 
 
 ### Step1: Improve Persistence
-The persistance of contacts was obtained through the module pickle. This module create a databasse save.p where the user can store the contact. ContactList is made by an array of element consisting of four attributes [name,surname,email,notes].
+The persistance of contacts was obtained through the module pickle. Contact is an object consisting of four attributes:
+*name
+*surname
+*email
+*notes: field text where make some annotatiom
+This module create a databasse save.p where the user can store the contact. ContactList is made by an array of element 
 
 ```
 
