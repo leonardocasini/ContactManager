@@ -34,6 +34,6 @@ The persistance of contacts was obtained through the module pickle. Contact is a
 
 This module create a database save.p where the user can store an array of contact. 
 
-```
+
 
 
