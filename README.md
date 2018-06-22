@@ -10,9 +10,7 @@ A simple project for the exam of Human Computer Interaction.The Contact Manager 
 - [x] Contact editing
 - [x] Full text search
 
-## Getting Started
 
-The project was developed with python3 . See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
@@ -25,7 +23,7 @@ The libraries necessary for the use of the program are:
 
 
 ### Step1: Improve Persistence
-The first step was create ```Contact``` and ```ContactsBook``` classes and improve persistence for ```Contact``` class, this using the UsersDefault strategy, clearly explained in [this tutorial](https://developer.apple.com/documentation/foundation/userdefaults). Shortly, a file is created in the users folder (for me /Users/ME/Library/Containers/my-name.ContactManager/Data/Documents/contacts). This strategy obviusly isn't able to easly manage asynchronus changes: that's why i've not implemented this features.
+The persistance of contacts was obtained through the module pickle. This module create a databasse save.p where the user can store the contact. ContactList is made by an array of element consisting of four attributes [name,surname,email,notes].
 
 ```
 
