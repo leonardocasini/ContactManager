@@ -42,4 +42,9 @@ Once the logic behind the representation and persistance of contacts has been de
  * An event on doubleClick elements of ```QTreeView``` that shows the ContactView
 
 
+### Possible Improvement
+
+Any improvements to the program can be:
+ * Check if the field of new contact was correctly insert
+ * ```ContactView``` contains a ```QLabel``` where it was insert an icon, future developers could replace this icon with a profile image 
 
