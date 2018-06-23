@@ -44,7 +44,8 @@ Once the logic behind the representation and persistance of contacts has been de
 
 ### Possible Improvement
 
-Any improvements to the program can be:
+Any possible improvements to software could be:
+ * Check if every field of new contact was insert
  * Check if the field of new contact was correctly insert
  * ```ContactView``` contains a ```QLabel``` where it was insert an icon, future developers could replace this icon with a profile image 
 
