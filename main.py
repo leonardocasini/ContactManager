@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.uic.properties import QtGui
 from NewContact import NewContForm
 from ContactView import ContactViewForm
+from ModelCM import Model
 
 import sys
 import qdarkstyle
@@ -25,13 +26,14 @@ class ContactViewForm(QtWidgets.QDialog, ContactViewForm):
         self.setupUi(self, name,surname,number,email,note)        
 
 
-class Ui_MainWindow(object):
+class ViewController(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("Contact Manager")
         MainWindow.resize(369, 629)
 
         #Database is implemented with the pickle module 
-        self.database = pickle.load( open( "save.p", "rb" ) )
+        #self.database = pickle.load( open( "save.p", "rb" ) )
+        self.mod = Model(pickle.load( open( "save.p", "rb" )))
         
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -95,28 +97,19 @@ class Ui_MainWindow(object):
         currentRow = self.tableWidget.currentIndex().row()
         text = self.tableWidget.selectedIndexes()[1].data(Qt.DisplayRole)
         
-        #the order of contacts in the table is different in the database, so the programm search the contact
-        #with the same number of contact clicked 
-        for i in range(len(self.database)):
-            if text == self.database[i]['number']:
-                correctIndex = i
+        #Call method to get index of correct element
+        correctIndex = self.mod.getIndexContact(text)
         
         # Once it found the correct index of contact it open the contactView        
-        cfv = ContactViewForm(None, self.database[correctIndex]['name'],self.database[correctIndex]['surname'],self.database[correctIndex]['number'],
-                                    self.database[correctIndex]['email'],self.database[correctIndex]['note'])
+        cfv = ContactViewForm(None, self.mod.getElementName(correctIndex),self.mod.getElementSurname(correctIndex),self.mod.getElementNumber(correctIndex),
+                                    self.mod.getElementEmail(correctIndex),self.mod.getElementNote(correctIndex))
         if cfv.exec_():
             # if True the user clicks delete element button else he saves the modifies in the database
             if cfv.deleteChoose: 
-                self.database.pop(correctIndex)
+                self.mod.deleteContact(correctIndex)
             else:
-                self.database[correctIndex] = {'name': cfv.name,
-                                             'surname': cfv.surname,
-                                             'email': cfv.email,
-                                             'number': cfv.number,
-                                             'note':cfv.note}
+                self.mod.editContact(correctIndex,cfv.name,cfv.surname,cfv.email,cfv.number,cfv.note)
 
-            #Load the changes of database in file.p
-            pickle.dump( self.database, open( "save.p", "wb" ) )
             self.generateList()
              
     #this method set a filter for the SearchLineEdit
@@ -131,13 +124,13 @@ class Ui_MainWindow(object):
     #This method remove all rows and update with the element of database
     def generateList(self):
         self.model.removeRows( 0, self.model.rowCount() )
-        for i in range(len(self.database)):
+        for i in range(len(self.mod.database)):
             self.model.insertRow(0)
-            self.model.setData(self.model.index(0, NAME), self.database[i]['name']+' '+self.database[i]['surname'])
-            self.model.setData(self.model.index(0, NUMBER), self.database[i]['number'])
-            self.model.setData(self.model.index(0, DATE), self.database[i]['email'])
-            self.model.setData(self.model.index(0, HIDDEN), self.database[i]['email']+self.database[i]['name']+
-                               self.database[i]['surname']+self.database[i]['number'])
+            self.model.setData(self.model.index(0, NAME), self.mod.getElementName(i)+' '+self.mod.getElementSurname(i))
+            self.model.setData(self.model.index(0, NUMBER), self.mod.getElementNumber(i))
+            self.model.setData(self.model.index(0, DATE), self.mod.getElementEmail(i))
+            self.model.setData(self.model.index(0, HIDDEN), self.mod.getElementEmail(i)+self.mod.getElementName(i)+
+                               self.mod.getElementSurname(i)+self.mod.getElementNumber(i))
             
     #this method open a Widget where insert the contact values 
     def newContact(self):
@@ -149,13 +142,7 @@ class Ui_MainWindow(object):
             self.model.setData(self.model.index(0, DATE), ncf.email)
             self.model.setData(self.model.index(0,HIDDEN), ncf.name +' '
                                + ncf.surname+' '+ str(ncf.number)+' '+ ncf.email)
-            self.database = pickle.load( open( "save.p", "rb" ) )
-            self.database.append({'name': ncf.name, 
-                                  'surname': ncf.surname, 
-                                  'email': ncf.email,
-                                  'number': ncf.number,
-                                  'note':''})
-            pickle.dump( self.database, open( "save.p", "wb" ) )   
+            self.mod.addContact(ncf.name,ncf.surname,ncf.number,ncf.email,'')  
             
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -170,7 +157,7 @@ if __name__ == '__main__':
 
     app = QApplication(sys.argv)
     window = QMainWindow()
-    ui = Ui_MainWindow()
+    ui = ViewController()
     ui.setupUi(window)
     app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
     window.show()
