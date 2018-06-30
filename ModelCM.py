@@ -1,5 +1,6 @@
 import pickle
 
+#Model in MVC paradigm 
 class Model:
 	def __init__(self, database):
 		self.database = database

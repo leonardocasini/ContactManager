@@ -25,7 +25,7 @@ class ContactViewForm(QtWidgets.QDialog, ContactViewForm):
         QtWidgets.QDialog.__init__(self,parent)
         self.setupUi(self, name,surname,number,email,note)        
 
-
+#View Controller in MVC paradigm
 class ViewController(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("Contact Manager")
